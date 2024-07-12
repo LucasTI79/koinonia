@@ -2,13 +2,12 @@ import { ModeToggle } from "@/components/theme-switcher";
 import { Facebook } from "../components/icons/Facebook";
 import { Instagram } from "@/components/icons/Instagram";
 import { Button } from "@/components/ui/button";
-import { MoveRight } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import { Koinonia } from "@/components/icons/Koinonia";
 import { Smile } from "@/components/icons/Smile";
 import { Cross } from "@/components/icons/Cross";
 import { Heart } from "@/components/icons/Heart";
 import { Arrow } from "@/components/icons/Arrow";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 export default function Home() {
   return (
@@ -17,13 +16,10 @@ export default function Home() {
         <div className="w-full max-w-[1200px] flex justify-center items-center mx-auto">
           <nav>
             <ul className="flex justify-center items-center gap-4">
-              <li>
-                <a href="#">Inicio</a>
-              </li>
-              <li>
-                <a href="#aboutus">Quem Somos</a>
-              </li>
+              <li><a href="#">Inicio</a></li>
+              <li><a href="#aboutus">Quem Somos</a></li>
               <li><a href="#purpose">Nosso Proposito</a></li>
+              <li><a href="#faq">Duvidas</a></li>
               <li><a href="#contact">Contato</a></li>
             </ul>
           </nav>
@@ -50,7 +46,30 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
+      <section id="faq" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
+        <h3 className="text-5xl font-black">Sessão de dúvidas</h3>
+        <Accordion type="single" collapsible className="w-full">
+          <AccordionItem value="item-2">
+            <AccordionTrigger>Sou de outro ministerio, posso participar do grupo ainda assim?</AccordionTrigger>
+            <AccordionContent>
+              Com certeza! O nosso grupo e interministerial, podendendo reunir pessoas de diferentes igrejas e ministerios.
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-1">
+            <AccordionTrigger>Como eu posso ajudar com o grupo?</AccordionTrigger>
+            <AccordionContent>
+              Entre em contato conosco, pelo email <a className="pointer underline" href="mailto:oi@koinoniaproject.com.br?subject=Quero conhecer mais o Koinonia" target="_blank">oi@koinoniaproject.com.br</a> ou através das nossas redes sociais! Gostariamos de entender o seu momento e ouvir as suas ideias!
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem value="item-3">
+            <AccordionTrigger>Como posso me aproximar de Deus? Estou distante dele, não me sinto preparado</AccordionTrigger>
+            <AccordionContent>
+              Todos passamos por altos e baixos! O foco do grupo é a <strong><abbr title="Comunhão em grego">Koinonia</abbr></strong> entre os irmãos, venha como você está e juntos vamos crescer na graça e no conhecimento.
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+      </section>
+      {/* <section className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
         <div className="w-full flex justify-between items-center">
           <div className="flex items-center justify-start gap-16">
             <span>20/07/2024</span>
@@ -82,7 +101,7 @@ export default function Home() {
           </div>
           <MoveRight size={32} />
         </div>
-      </section>
+      </section> */}
 
       <section id='contact' className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
         <Smile width={76} height={76} />
