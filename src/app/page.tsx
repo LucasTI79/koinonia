@@ -8,6 +8,7 @@ import { Cross } from "@/components/icons/Cross";
 import { Heart } from "@/components/icons/Heart";
 import { Arrow } from "@/components/icons/Arrow";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Mail } from "lucide-react";
 
 export default function Home() {
   return (
@@ -58,50 +59,17 @@ export default function Home() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Como eu posso ajudar com o grupo?</AccordionTrigger>
             <AccordionContent>
-              Entre em contato conosco pelo email <a className="pointer underline" href="mailto:oi@koinoniaproject.com.br?subject=Quero conhecer mais o Koinonia" target="_blank">oi@koinoniaproject.com.br</a> ou através das nossas redes sociais! Gostariamos de entender o seu momento e ouvir as suas ideias!
+              Entre em contato conosco pelo email <a className="pointer underline" href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">koinoniamusicproject@gmail.com</a> ou através das nossas redes sociais! Gostariamos de entender o seu momento e ouvir as suas ideias!
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
             <AccordionTrigger>Como posso me aproximar de Deus? Estou distante dele, não me sinto preparado</AccordionTrigger>
             <AccordionContent>
-              Todos passamos por altos e baixos! O foco do grupo é a <strong><abbr title="Comunhão em grego">Koinonia</abbr></strong> entre os irmãos, venha como você está e juntos vamos crescer na graça e no conhecimento.
+            Todos passamos por altos e baixos! E por isso o <abbr title="Comunhão em grego">Koinonia</abbr> surgiu, para que juntos venhamos crescer na graça e no conhecimento. Deus te escolheu e é Ele quem irá te capacitar (2ª Coríntios 1:21-22)
             </AccordionContent>
           </AccordionItem>
         </Accordion>
       </section>
-      {/* <section className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
-        <div className="w-full flex justify-between items-center">
-          <div className="flex items-center justify-start gap-16">
-            <span>20/07/2024</span>
-            <span>Ensaio Koinonia</span>
-          </div>
-          <MoveRight size={32} />
-        </div>
-        <Separator />
-        <div className="w-full flex justify-between items-center">
-          <div className="flex items-center justify-start gap-16">
-            <span>03/07/2024</span>
-            <span>Ensaio Koinonia</span>
-          </div>
-          <MoveRight size={32} />
-        </div>
-        <Separator />
-        <div className="w-full flex justify-between items-center">
-          <div className="flex items-center justify-start gap-16">
-            <span>17/08/2024</span>
-            <span>Ensaio Koinonia</span>
-          </div>
-          <MoveRight size={32} />
-        </div>
-        <Separator />
-        <div className="w-full flex justify-between items-center">
-          <div className="flex items-center justify-start gap-16">
-            <span>31/08/2024</span>
-            <span>Ensaio Koinonia</span>
-          </div>
-          <MoveRight size={32} />
-        </div>
-      </section> */}
 
       <section id='contact' className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
         <Smile width={76} height={76} />
@@ -114,7 +82,7 @@ export default function Home() {
           <p>Entre em nossa viagem divina! Conecte-se conosco nas redes sociais, receba as últimas atualizações sobre nossos eventos e faça parte dessa jornada hipnotizante.</p>
         </article>
         <Button asChild>
-           <a href="mailto:oi@koinoniaproject.com.br?subject=Quero conhecer mais o Koinonia" target="_blank">Quero conhecer mais</a>
+          <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">Quero conhecer mais</a>
         </Button>
       </section>
 
@@ -128,15 +96,27 @@ export default function Home() {
             <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
               <Instagram className="dark:fill-white fill-black" width={24} height={24} />
             </a>
-            {/* <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
-                <Koinonia className="dark:fill-white fill-black" width={24} height={24} />
-              </a> */}
+            <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">
+              <Mail size={24} />
+            </a>
           </div>
         </div>
       </footer>
 
       <div className="fixed top-8 right-8">
         <ModeToggle />
+      </div>
+
+      <div className="fixed right-8 top-1/2 bottom-1/2 flex flex-col gap-4 bg-white dark:bg-black h-max">
+        <a href="https://www.facebook.com/profile.php?id=61560759413266" target="_blank">
+          <Facebook className="dark:fill-white fill-black" width={24} height={24} />
+        </a>
+        <a href="https://www.instagram.com/koinoniamusicproject" target="_blank">
+          <Instagram className="dark:fill-white fill-black" width={24} height={24} />
+        </a>
+        <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">
+          <Mail size={24} />
+        </a>
       </div>
       {/* <Popover >
         <PopoverTrigger asChild className="fixed top-8 right-8"> <Settings size={32} />
