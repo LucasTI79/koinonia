@@ -58,7 +58,7 @@ export default function Home() {
           <AccordionItem value="item-1">
             <AccordionTrigger>Como eu posso ajudar com o grupo?</AccordionTrigger>
             <AccordionContent>
-              Entre em contato conosco, pelo email <a className="pointer underline" href="mailto:oi@koinoniaproject.com.br?subject=Quero conhecer mais o Koinonia" target="_blank">oi@koinoniaproject.com.br</a> ou através das nossas redes sociais! Gostariamos de entender o seu momento e ouvir as suas ideias!
+              Entre em contato conosco pelo email <a className="pointer underline" href="mailto:oi@koinoniaproject.com.br?subject=Quero conhecer mais o Koinonia" target="_blank">oi@koinoniaproject.com.br</a> ou através das nossas redes sociais! Gostariamos de entender o seu momento e ouvir as suas ideias!
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
