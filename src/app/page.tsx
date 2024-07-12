@@ -1,113 +1,134 @@
-import Image from "next/image";
+import { ModeToggle } from "@/components/theme-switcher";
+import { Facebook } from "../components/icons/Facebook";
+import { Instagram } from "@/components/icons/Instagram";
+import { Button } from "@/components/ui/button";
+import { MoveRight } from "lucide-react";
+import { Separator } from "@/components/ui/separator";
+import { Koinonia } from "@/components/icons/Koinonia";
+import { Smile } from "@/components/icons/Smile";
+import { Cross } from "@/components/icons/Cross";
+import { Heart } from "@/components/icons/Heart";
+import { Arrow } from "@/components/icons/Arrow";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="w-full h-full mx-auto">
+      <header className=" hidden md:block pt-20 flex justify-center items-center">
+        <div className="w-full max-w-[1200px] flex justify-center items-center">
+          <nav>
+            <ul className="flex justify-center items-center gap-4">
+              <li>
+                <a href="#">Inicio</a>
+              </li>
+              <li>
+                <a href="#aboutus">Quem Somos</a>
+              </li>
+              <li><a href="#purpose">Nosso Proposito</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+          </nav>
         </div>
+      </header>
+      <section className="pt-40 flex max-w-[1200px] justify-center items-center mx-auto p-4">
+        <Koinonia className="hidden md:block dark:fill-white fill-black" width={`6rem`} height={`6rem`} />
+        <h1 className="text-6xl font-black flex justify-center items-center gap-4">KOINONIA</h1>
+      </section>
+
+      <section id="aboutus" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center lg:items-start mx-auto p-4">
+        <h3 className="text-5xl font-black">Quem somos ?</h3>
+        <article className="w-full max-w-[600px] flex flex-col justify-center items-center gap-4">
+          <p className="text-pretty text-xl">Somos uma junção de pessoas de igrejas interministeriais, o foco não é seguir uma denominação e sim unir pessoas que queiram louvar a Jesus Cristo com excelência, com verdadeira adoração e que entendam o que é louvar o Senhor na sua essência.</p>
+          <Cross className="dark:fill-white fill-black self-center" width={32} height={32} />
+        </article>
+      </section>
+
+      <section id="purpose" className="pt-40 flex flex-col lg:flex-row gap-8 max-w-[1200px] justify-center lg:justify-between items-center lg:items-start mx-auto p-4">
+        <h3 className="text-5xl font-black">Nosso Propósito</h3>
+        <article className="w-full max-w-[600px] flex flex-col gap-4 items-center justify-center">
+          <p className="text-pretty text-xl">Pregar o amor de Cristo e ter um crescimento enraizado na palavra do Senhor, crescendo na graça e no conhecimento</p>
+          <Heart className="dark:fill-white fill-black" width={32} height={32} />
+        </article>
+      </section>
+
+      <section className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
+        <div className="w-full flex justify-between items-center">
+          <div className="flex items-center justify-start gap-16">
+            <span>20/07/2024</span>
+            <span>Ensaio Koinonia</span>
+          </div>
+          <MoveRight size={32} />
+        </div>
+        <Separator />
+        <div className="w-full flex justify-between items-center">
+          <div className="flex items-center justify-start gap-16">
+            <span>03/07/2024</span>
+            <span>Ensaio Koinonia</span>
+          </div>
+          <MoveRight size={32} />
+        </div>
+        <Separator />
+        <div className="w-full flex justify-between items-center">
+          <div className="flex items-center justify-start gap-16">
+            <span>17/07/2024</span>
+            <span>Ensaio Koinonia</span>
+          </div>
+          <MoveRight size={32} />
+        </div>
+        <Separator />
+        <div className="w-full flex justify-between items-center">
+          <div className="flex items-center justify-start gap-16">
+            <span>31/08/2024</span>
+            <span>Ensaio Koinonia</span>
+          </div>
+          <MoveRight size={32} />
+        </div>
+      </section>
+
+      <section id='contact' className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
+        <Smile width={76} height={76} />
+        <div className="flex justify-center items-center gap-4">
+          <h1 className="text-5xl font-black text-center">Entre nessa jornada</h1>
+          <Arrow className="dark:fill-white fill-black hidden md:block" width={32} height={32} />
+        </div>
+
+        <article className="max-w-[500px] text-cente text-xl">
+          <p>Entre em nossa viagem divina! Conecte-se conosco nas redes sociais, receba as últimas atualizações sobre nossos eventos e faça parte dessa jornada hipnotizante.</p>
+        </article>
+        <Button>Quero conhecer mais</Button>
+      </section>
+
+      <footer className="pt-40 pb-20 mx-auto flex w-full max-w-[1200px] items-center justify-center p-4">
+        <div className="flex justify-between items-center flex-1">
+          <p className="text-sm"> &copy; {new Date().getFullYear()} LFA Labs. Todos os direitos reservados. Graça e paz.</p>
+          <div className="flex justify-center items-center gap-4">
+            <a href="https://www.facebook.com/profile.php?id=61560759413266" target="_blank">
+              <Facebook className="dark:fill-white fill-black" width={24} height={24} />
+            </a>
+            <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
+              <Instagram className="dark:fill-white fill-black" width={24} height={24} />
+            </a>
+            {/* <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
+                <Koinonia className="dark:fill-white fill-black" width={24} height={24} />
+              </a> */}
+          </div>
+        </div>
+      </footer>
+
+      <div className="fixed top-8 right-8">
+        <ModeToggle />
       </div>
+      {/* <Popover >
+        <PopoverTrigger asChild className="fixed top-8 right-8">
+          <Settings size={32} />
+        </PopoverTrigger>
+        <PopoverContent>
+          <div className="flex justify-center items-center gap-4">
+            <p className="text-xl">Escolha um tema</p>
+            <ModeToggle />
+          </div>
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </PopoverContent>
+      </Popover> */}
     </main>
   );
 }
