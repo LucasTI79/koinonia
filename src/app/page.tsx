@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <main className="w-full h-full mx-auto">
       <header className="hidden md:block pt-20 flex justify-center items-center">
-        <div className="w-full max-w-[1200px] flex justify-center items-center">
+        <div className="w-full max-w-[1200px] flex justify-center items-center mx-auto">
           <nav>
             <ul className="flex justify-center items-center gap-4">
               <li>
