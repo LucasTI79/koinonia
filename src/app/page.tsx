@@ -94,7 +94,9 @@ export default function Home() {
         <article className="max-w-[500px] text-cente text-xl">
           <p>Entre em nossa viagem divina! Conecte-se conosco nas redes sociais, receba as últimas atualizações sobre nossos eventos e faça parte dessa jornada hipnotizante.</p>
         </article>
-        <Button>Quero conhecer mais</Button>
+        <Button asChild>
+           <a href="mailto:oi@koinoniaproject.com.br?subject=Quero conhecer mais o Koinonia" target="_blank">Quero conhecer mais</a>
+        </Button>
       </section>
 
       <footer className="pt-40 pb-20 mx-auto flex w-full max-w-[1200px] items-center justify-center p-4">
