@@ -69,7 +69,7 @@ export default function Home() {
         <Separator />
         <div className="w-full flex justify-between items-center">
           <div className="flex items-center justify-start gap-16">
-            <span>17/07/2024</span>
+            <span>17/08/2024</span>
             <span>Ensaio Koinonia</span>
           </div>
           <MoveRight size={32} />
