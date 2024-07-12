@@ -9,26 +9,29 @@ import { Heart } from "@/components/icons/Heart";
 import { Arrow } from "@/components/icons/Arrow";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Mail } from "lucide-react";
+import { Header } from "@/components/header";
 
 export default function Home() {
+
+  const headerLinks = [
+    { label: 'Quem somos', href: '#aboutus' },
+    { label: 'Nosso Propósito', href: '#purpose' },
+    { label: 'Dúvidas', href: '#faq' },
+    { label: 'Contato', href: '#contact' },
+  ]
+
   return (
     <main className="w-full h-full mx-auto">
-      <header className="hidden md:block pt-20 flex justify-center items-center">
-        <div className="w-full max-w-[1200px] flex justify-center items-center mx-auto">
-          <nav>
-            <ul className="flex justify-center items-center gap-4">
-              <li><a href="#">Inicio</a></li>
-              <li><a href="#aboutus">Quem Somos</a></li>
-              <li><a href="#purpose">Nosso Proposito</a></li>
-              <li><a href="#faq">Duvidas</a></li>
-              <li><a href="#contact">Contato</a></li>
-            </ul>
-          </nav>
+      <Header links={headerLinks} />
+      <section className="pt-40 flex flex-col gap-16 max-w-[1200px] justify-center items-center mx-auto p-4">
+        <div className="flex justify-center items-center">
+          <Koinonia className="hidden md:block dark:fill-white fill-black" width={`6rem`} height={`6rem`} />
+          <h1 className="text-6xl font-black flex justify-center items-center gap-4">KOINONIA</h1>
         </div>
-      </header>
-      <section className="pt-40 flex max-w-[1200px] justify-center items-center mx-auto p-4">
-        <Koinonia className="hidden md:block dark:fill-white fill-black" width={`6rem`} height={`6rem`} />
-        <h1 className="text-6xl font-black flex justify-center items-center gap-4">KOINONIA</h1>
+
+        <Button asChild>
+          <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">Entrar em contato</a>
+        </Button>
       </section>
 
       <section id="aboutus" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center lg:items-start mx-auto p-4">
@@ -65,7 +68,7 @@ export default function Home() {
           <AccordionItem value="item-3">
             <AccordionTrigger>Como posso me aproximar de Deus? Estou distante dele, não me sinto preparado</AccordionTrigger>
             <AccordionContent>
-            Todos passamos por altos e baixos! E por isso o <abbr title="Comunhão em grego">Koinonia</abbr> surgiu, para que juntos venhamos crescer na graça e no conhecimento. Deus te escolheu e é Ele quem irá te capacitar (2ª Coríntios 1:21-22)
+              Todos passamos por altos e baixos! E por isso o <abbr title="Comunhão em grego">Koinonia</abbr> surgiu, para que juntos venhamos crescer na graça e no conhecimento. Deus te escolheu e é Ele quem irá te capacitar (2ª Coríntios 1:21-22)
             </AccordionContent>
           </AccordionItem>
         </Accordion>
