@@ -10,6 +10,7 @@ import { Arrow } from "@/components/icons/Arrow";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Mail } from "lucide-react";
 import { Header } from "@/components/header";
+import { Cursor } from "@/components/cursor";
 
 export default function Home() {
 
@@ -32,6 +33,19 @@ export default function Home() {
         <Button asChild>
           <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">Entrar em contato</a>
         </Button>
+
+        <div className="flex flex-col gap-4 justify-center items-center">
+          <small>ou se conecte através das nossas redes sociais</small>
+
+          <div className="flex justify-center items-center gap-8">
+            <a href="https://www.facebook.com/profile.php?id=61560759413266" target="_blank">
+              <Facebook className="dark:fill-white fill-black hover:opacity-60" width={24} height={24} />
+            </a>
+            <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
+              <Instagram className="dark:fill-white fill-black hover:opacity-60" width={24} height={24} />
+            </a>
+          </div> 
+        </div>
       </section>
 
       <section id="aboutus" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center lg:items-start mx-auto p-4">
@@ -53,13 +67,13 @@ export default function Home() {
       <section id="faq" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
         <h3 className="text-5xl font-black">Sessão de dúvidas</h3>
         <Accordion type="single" collapsible className="w-full">
-          <AccordionItem value="item-2">
+          <AccordionItem value="item-1">
             <AccordionTrigger>Sou de outro ministerio, posso participar do grupo ainda assim?</AccordionTrigger>
             <AccordionContent>
               Com certeza! O nosso grupo e interministerial, podendendo reunir pessoas de diferentes igrejas e ministerios.
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem value="item-1">
+          <AccordionItem value="item-2">
             <AccordionTrigger>Como eu posso ajudar com o grupo?</AccordionTrigger>
             <AccordionContent>
               Entre em contato conosco pelo email <a className="pointer underline" href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">koinoniamusicproject@gmail.com</a> ou através das nossas redes sociais! Gostariamos de entender o seu momento e ouvir as suas ideias!
@@ -94,13 +108,13 @@ export default function Home() {
           <p className="text-sm"> &copy; {new Date().getFullYear()} LFA Labs. Todos os direitos reservados. Graça e paz.</p>
           <div className="flex justify-center items-center gap-4">
             <a href="https://www.facebook.com/profile.php?id=61560759413266" target="_blank">
-              <Facebook className="dark:fill-white fill-black" width={24} height={24} />
+              <Facebook className="dark:fill-white fill-black hover:opacity-60" width={24} height={24} />
             </a>
             <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
-              <Instagram className="dark:fill-white fill-black" width={24} height={24} />
+              <Instagram className="dark:fill-white fill-black hover:opacity-60" width={24} height={24} />
             </a>
             <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">
-              <Mail size={24} />
+              <Mail className="hover:opacity-60" size={24} />
             </a>
           </div>
         </div>
@@ -109,16 +123,8 @@ export default function Home() {
       <div className="fixed top-8 right-8">
         <ModeToggle />
       </div>
-      {/* <Popover >
-        <PopoverTrigger asChild className="fixed top-8 right-8"> <Settings size={32} />
-        </PopoverTrigger>
-        <PopoverContent>
-          <div className="flex justify-center items-center gap-4">
-            <p className="text-xl">Escolha um tema</p>
-            <ModeToggle />
-          </div>
-        </PopoverContent>
-      </Popover> */}
+
+      <Cursor />
     </main>
   );
 }
