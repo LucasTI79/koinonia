@@ -109,18 +109,6 @@ export default function Home() {
       <div className="fixed top-8 right-8">
         <ModeToggle />
       </div>
-
-      <div className="fixed right-8 top-1/2 bottom-1/2 flex flex-col gap-4 bg-white dark:bg-black h-max">
-        <a href="https://www.facebook.com/profile.php?id=61560759413266" target="_blank">
-          <Facebook className="dark:fill-white fill-black" width={24} height={24} />
-        </a>
-        <a href="https://www.instagram.com/koinoniamusicproject" target="_blank">
-          <Instagram className="dark:fill-white fill-black" width={24} height={24} />
-        </a>
-        <a href="mailto:koinoniamusicproject@gmail.com?subject=Quero conhecer mais o Koinonia" target="_blank">
-          <Mail size={24} />
-        </a>
-      </div>
       {/* <Popover >
         <PopoverTrigger asChild className="fixed top-8 right-8"> <Settings size={32} />
         </PopoverTrigger>
