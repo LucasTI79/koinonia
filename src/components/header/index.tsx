@@ -2,6 +2,7 @@
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import { useRef, useState } from 'react';
+
 type TLink = { label: string; href: string; index?: boolean }
 type THeaderProps = {
     links: TLink[]

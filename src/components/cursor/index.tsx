@@ -27,7 +27,7 @@ export function Cursor() {
     <motion.div
       className={cn(
         `pointer-events-none fixed h-32 w-32 rounded-full z-50`,
-        `bg-black/40 dark:bg-white/30 blur-[64px]`,
+        `bg-black/40 dark:bg-white/40 blur-[100px]`,
       )}
       style={{
         top: mousePosition.y,

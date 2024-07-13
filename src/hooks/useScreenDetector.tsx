@@ -1,20 +1,22 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export const useScreenDetector = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+  const secureWindow = typeof window !== "undefined" ? window : null; 
 
-  const handleWindowSizeChange = () => {
-    setWidth(window.innerWidth);
-  };
+  const [width, setWidth] = useState(secureWindow?.innerWidth ?? 0);
+
+  const handleWindowSizeChange = useCallback(() => {
+    if(secureWindow?.innerWidth) setWidth(secureWindow?.innerWidth);
+  }, [secureWindow]);
 
   useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
+    secureWindow?.addEventListener("resize", handleWindowSizeChange);
 
     return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
+        secureWindow?.removeEventListener("resize", handleWindowSizeChange);
     };
-  }, []);
+  }, [handleWindowSizeChange, secureWindow]);
 
   const isMobile = width <= 768;
   const isTablet = width <= 1024;

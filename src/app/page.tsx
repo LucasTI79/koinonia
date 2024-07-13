@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Mail } from "lucide-react";
 import { Header } from "@/components/header";
 import { Cursor } from "@/components/cursor";
+import { ClientOnly } from "@/components/clientOnly";
 
 export default function Home() {
 
@@ -124,7 +125,9 @@ export default function Home() {
         <ModeToggle />
       </div>
 
-      <Cursor />
+      <ClientOnly>
+        <Cursor />
+      </ClientOnly>
     </main>
   );
 }
