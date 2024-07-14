@@ -17,9 +17,9 @@ export default function MembersPage(){
         <main className="flex flex-col min-h-screen bg-background">
             <Link 
                 href="/" 
-                className="bg-white dark:bg-black p-4 rounded-xl fixed top-6 left-6 flex justify-center items-center gap-2"
+                className="bg-white dark:bg-black rounded-xl h-10 fixed top-8 left-8 flex justify-center items-center gap-2"
                 >
-              <ArrowLeft />
+              <ArrowLeft size={20}/>
               <p className="hidden md:block">Voltar</p>
             </Link>
             <section className="pt-40 flex flex-col gap-16 max-w-[1200px] justify-center items-center mx-auto p-4">
