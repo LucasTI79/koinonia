@@ -5,5 +5,6 @@ export async function listEvents(calendarId: string){
         calendarId,
         maxResults: 10,
         auth,
+        timeMin: new Date().toISOString(),
     })
 }
