@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 
 import { cn } from "@/lib/utils"
 import { ModeToggle } from "@/components/theme-switcher";
+import { Toaster } from "sonner";
 
 const fontSans = FontSans({
   weight: ['400', '500', '600', '700'],
@@ -34,6 +35,7 @@ export default function RootLayout({
             disableTransitionOnChange
           >
             {children}
+            <Toaster />
             <div className="fixed top-8 right-8">
               <ModeToggle />
             </div>
