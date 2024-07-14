@@ -26,7 +26,7 @@ export default function MembersPage(){
                 </div>
             </section>
             <section className="pt-24 px-4 w-full max-w-[1200px] mx-auto flex flex-col gap-16 md:flex-row justify-between md:gap-8">
-               <div className="w-full md:w-1/2 flex flex-col justify-center items-center md:items-start gap-4">
+               <div className="w-full md:w-1/2 flex flex-col justify-center items-center lg:items-start gap-4">
                     <h2 className="text-3xl font-semibold mb-4">Área de membros</h2>
                     <p>Aqui você poderá encontrar nossa agenda e informações do grupo</p>
                     <Heart width={24} height={24} className="fill-black dark:fill-white self-center" />
