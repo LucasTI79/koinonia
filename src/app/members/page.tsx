@@ -3,10 +3,12 @@ import { CalendarList } from "./components/eventsList";
 import { environments } from "@/config/environments";
 import { Footer } from "@/components/footer";
 import { Koinonia } from "@/components/icons/Koinonia";
+import { DailyVerse } from "./components/dailyVerse";
+import { ClientOnly } from "@/components/clientOnly";
 
 export const revalidate = Number(environments.revalidateTime ||  60 * 5) // 5 minutes
 
-export default function MembersPage(){
+export default function MembersPage(){   
     const calendarIds = environments.calendarIds.split(",");
 
     return (
@@ -23,9 +25,11 @@ export default function MembersPage(){
                     <p>Aqui você poderá encontrar nossa agenda e informações do grupo</p>
                     <Heart width={24} height={24} className="fill-black dark:fill-white self-center" />
                </div>
-               <div className="w-full md:w-1/2 flex flex-col justify-center items-center gap-4">
+               <div className="w-full md:w-1/2 flex flex-col justify-start items-center gap-4 max-h-32">
                     <h2 className="text-3xl font-semibold mb-4">Versículo do dia</h2>
-                    <p>Deus amou o mundo de tal maneira que deu seu filho unigenito para que todo aquele que nele cre nao pereça, mas tenha a vida eterna</p>
+                    <ClientOnly>
+                        <DailyVerse />
+                    </ClientOnly>
                </div>
             </section>
             <section className="pt-24 px-4 w-full max-w-[1200px] mx-auto flex flex-col justify-center md:justify-start gap-8">
