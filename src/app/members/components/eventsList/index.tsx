@@ -1,13 +1,10 @@
 import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { environments } from "@/config/environments";
 import { listEvents } from "@/http/events";
 import { CalendarIcon, MapPinIcon } from "lucide-react";
 
 type TCalendarListProps = {
     calendarId: string;
 }
-
-export const revalidate = environments.revalidateTime ?? 60 * 5 // 5 minutes;
 
 export async function CalendarList({ calendarId }: TCalendarListProps) {
     const { data } = await listEvents(calendarId);

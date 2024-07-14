@@ -4,6 +4,8 @@ import { environments } from "@/config/environments";
 import { Footer } from "@/components/footer";
 import { Koinonia } from "@/components/icons/Koinonia";
 
+export const revalidate = Number(environments.revalidateTime ||  60 * 5) // 5 minutes
+
 export default function MembersPage(){
     const calendarIds = environments.calendarIds.split(",");
 
