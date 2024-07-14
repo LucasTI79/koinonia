@@ -7,6 +7,8 @@ type TCalendarListProps = {
     calendarId: string;
 }
 
+export const revalidate = environments.revalidateTime ?? 60 * 5 // 5 minutes;
+
 export async function CalendarList({ calendarId }: TCalendarListProps) {
     const { data } = await listEvents(calendarId);
 
