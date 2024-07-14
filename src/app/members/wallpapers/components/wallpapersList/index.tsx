@@ -36,6 +36,7 @@ export async function WallpapersList({ folderId }: TWallpapersListProps) {
                           <div key={wallpaper.id} className="group relative overflow-hidden rounded-lg h-64"> {/* Defina a altura do contêiner */}
                             {wallpaper.hasThumbnail && wallpaperLink ? (
                                 <Image
+                                    loading="lazy"
                                     src={wallpaperLink}
                                     alt={wallpaper?.name ?? `Wallpaper`}
                                     layout="fill"

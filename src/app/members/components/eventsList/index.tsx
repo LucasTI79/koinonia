@@ -2,6 +2,7 @@ import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/com
 import { environments } from "@/config/environments";
 import { listEvents } from "@/http/events";
 import { CalendarIcon, MapPinIcon } from "lucide-react";
+import { Event } from "./event";
 
 type TCalendarListProps = {
     calendarId: string;
@@ -39,26 +40,16 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {data.items.map((event) => {
                     const startDateFormated = event?.start?.dateTime ? new Date(event.start.dateTime).toLocaleString() : `-`;
-                    return (
-                        <Card className="w-full" key={event.id}>
-                            <CardHeader className="flex flex-col gap-4">
-                                <CardTitle>{event.summary}</CardTitle>
-                                <CardDescription className="flex flex-col gap-2">
-                                    <div className="flex items-center gap-2">
-                                        <CalendarIcon className="w-4 h-4" />
-                                        <span>{startDateFormated}</span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                        <MapPinIcon className="w-4 h-4" />
-                                        <span>{event?.location ?? `-`}</span>
-                                    </div>
-                                </CardDescription>
-                            </CardHeader>
-                            <CardContent>
-                                <p>{event.description}</p>
-                            </CardContent>
-                        </Card>
-                    )
+                    return <Event 
+                            key={event.id} 
+                            event={{ 
+                                id: event?.id ?? '-', 
+                                summary: event?.summary ?? '-', 
+                                description: event?.description ?? '', 
+                                location: event?.location ?? '-', 
+                                startDate: startDateFormated 
+                            }} 
+                            />
                 })}
             </div>
         </div>
