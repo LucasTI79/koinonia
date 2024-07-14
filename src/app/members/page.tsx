@@ -17,7 +17,7 @@ export default function MembersPage(){
         <main className="flex flex-col min-h-screen bg-background">
             <Link 
                 href="/" 
-                className="bg-white dark:bg-black p-4 rounded-xl md:hidden fixed top-6 left-6 flex justify-center items-center gap-2"
+                className="bg-white dark:bg-black p-4 rounded-xl fixed top-6 left-6 flex justify-center items-center gap-2"
                 >
               <ArrowLeft />
               <p className="hidden md:block">Voltar</p>
