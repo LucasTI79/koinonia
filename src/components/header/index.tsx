@@ -1,9 +1,10 @@
 "use client"
 import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import { useRef, useState } from 'react';
 
-type TLink = { label: string; href: string; index?: boolean }
+type TLink = { label: string; href: string; native?: boolean }
 type THeaderProps = {
     links: TLink[]
 }
@@ -30,20 +31,29 @@ export function Header({ links = [] }: THeaderProps) {
                     >
                         {links.map((link, index) => {
                             return (
-                                <Link
+                                <Li
                                     key={index}
                                     setPosition={setPosition}
-                                    >
-                                     <motion.a
-                                        href={link.href}
-                                        className={cn("text-pretty relative inline-block")}
-                                    >
-                                        {link.label}
-                                    </motion.a>
-                                </Link>
+                                >
+                                    {link.native ? (
+                                        <a
+                                            href={link.href}
+                                            className={cn("text-pretty relative inline-block")}
+                                        >
+                                            {link.label}
+                                        </a>
+                                    ) : (
+                                        <Link
+                                            href={link.href}
+                                            className={cn("text-pretty relative inline-block")}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    )}
+                                </Li>
                             )
                         })}
-                       
+
                     </ul>
                     <motion.span
                         animate={{
@@ -57,7 +67,7 @@ export function Header({ links = [] }: THeaderProps) {
     );
 }
 
-function Link({ children, setPosition }: { children: React.ReactNode, setPosition: React.Dispatch<React.SetStateAction<{ left: number; width: number; opacity: number; }>>}){
+function Li({ children, setPosition }: { children: React.ReactNode, setPosition: React.Dispatch<React.SetStateAction<{ left: number; width: number; opacity: number; }>> }) {
     const ref = useRef<HTMLLIElement | null>(null);
 
     return (
