@@ -5,7 +5,7 @@ import { useScreenDetector } from '@/hooks/useScreenDetector';
 import { cn } from '@/lib/utils';
 
 export function Cursor() {
-  const { isDesktop } = useScreenDetector();
+  const { isMobile } = useScreenDetector();
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -21,7 +21,7 @@ export function Cursor() {
     };
   }, []);
 
-  if (!isDesktop) return null;
+  if (isMobile) return null;
 
   return (
     <motion.div
