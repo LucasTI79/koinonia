@@ -3,7 +3,6 @@ import { cn } from '@/lib/utils';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRef, useState } from 'react';
-import { Hamburguer } from './hamburguer';
 
 type TLink = { label: string; href: string; native?: boolean }
 type THeaderProps = {
@@ -19,7 +18,6 @@ export function Header({ links = [] }: THeaderProps) {
 
     return (
         <header className="relative pt-20 justify-center items-center">
-            {/* <Hamburguer /> */}
             <div className="hidden md:flex w-full max-w-[1200px] justify-center items-center mx-auto">
                 <nav className='relative space-y-2'>
                     <ul

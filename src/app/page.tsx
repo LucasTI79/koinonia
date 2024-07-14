@@ -8,19 +8,19 @@ import { Cross } from "@/components/icons/Cross";
 import { Heart } from "@/components/icons/Heart";
 import { Arrow } from "@/components/icons/Arrow";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Mail } from "lucide-react";
+import { Mail, User } from "lucide-react";
 import { Header } from "@/components/header";
 import { Cursor } from "@/components/cursor";
 import { ClientOnly } from "@/components/clientOnly";
-import internal from "stream";
 import { Footer } from "@/components/footer";
+import Link from "next/link";
 
 export default function Home() {
 
   const headerLinks = [
     { label: 'Quem somos', href: '#aboutus', native: true },
-    { label: 'Nosso Propósito', href: '#purpose',  native: true },
-    { label: 'Dúvidas', href: '#faq',  native: true },
+    { label: 'Nosso Propósito', href: '#purpose', native: true },
+    { label: 'Dúvidas', href: '#faq', native: true },
     { label: 'Contato', href: '#contact', native: true },
     { label: 'Área de membros', href: `/members` }
   ]
@@ -28,6 +28,13 @@ export default function Home() {
   return (
     <main className="w-full h-full mx-auto relative">
       <Header links={headerLinks} />
+      <Link 
+        href="/members" 
+        className="bg-white dark:bg-black p-4 rounded-xl md:hidden fixed top-6 left-6 flex justify-center items-center gap-2">
+        <User />
+        <p>Membros</p>
+      </Link>
+
       <section className="pt-40 flex flex-col gap-16 max-w-[1200px] justify-center items-center mx-auto p-4">
         <div className="flex justify-center items-center">
           <Koinonia className="hidden md:block dark:fill-white fill-black" width={`6rem`} height={`6rem`} />
@@ -48,7 +55,7 @@ export default function Home() {
             <a className="" href="https://www.instagram.com/koinoniamusicproject" target="_blank">
               <Instagram className="dark:fill-white fill-black hover:opacity-60 transition-opacity" width={24} height={24} />
             </a>
-          </div> 
+          </div>
         </div>
       </section>
 
