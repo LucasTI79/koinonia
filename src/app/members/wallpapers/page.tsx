@@ -2,6 +2,8 @@ import Link from "next/link";
 import { WallpapersList } from "./components/wallpapersList";
 import { environments } from "@/config/environments";
 import { ArrowLeft } from "lucide-react";
+import { ClientOnly } from "@/components/clientOnly";
+import { Cursor } from "@/components/cursor";
 
 export default async function Wallpapers() {
     return (
@@ -22,6 +24,9 @@ export default async function Wallpapers() {
                     <WallpapersList folderId={environments.wallpapersFolderId} />
                 </div>
             </div>
+            <ClientOnly>
+                <Cursor />
+            </ClientOnly>
         </section>
     )
 }

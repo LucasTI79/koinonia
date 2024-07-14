@@ -9,6 +9,7 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Fragment } from "react";
+import { Cursor } from "@/components/cursor";
 
 export const revalidate = Number(environments.revalidateTime ||  60 * 5) // 5 minutes
 
@@ -57,6 +58,10 @@ export default function MembersPage(){
             </section>
 
             <Footer />
+
+            <ClientOnly>
+                <Cursor />
+            </ClientOnly>
         </main>
     )
 }
