@@ -29,7 +29,6 @@ export async function WallpapersList({ folderId }: TWallpapersListProps) {
         >
             <CarouselContent className="w-full">
                 {allowToDownload.map((wallpaper) => {
-                    console.log(wallpaper)
                     const wallpaperLink = wallpaper?.webContentLink?.split(`&`)?.[0] ?? ``
 
                     return (
