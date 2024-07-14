@@ -8,5 +8,6 @@ export async function listEvents(calendarId: string){
         maxResults: 10,
         auth,
         timeMin: today.toISOString(),
+        timeZone: "America/Sao_Paulo",
     })
 }

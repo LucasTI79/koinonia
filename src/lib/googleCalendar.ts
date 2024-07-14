@@ -14,7 +14,7 @@ const auth = new google.auth.JWT(
 
 const calendar = google.calendar({
     version: "v3",
-    auth
+    auth,
 })
 
 export { calendar, auth }
