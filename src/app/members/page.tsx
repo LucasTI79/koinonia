@@ -15,7 +15,7 @@ export default function MembersPage(){
 
     return (
         <main className="flex flex-col min-h-screen bg-background">
-            <Link href="/" className="fixed top-8 left-8 flex justify-center items-center gap-2">
+            <Link href="/" className="fixed top-10 left-10 flex justify-center items-center gap-2">
               <ArrowLeft />
               <p className="hidden md:block">Voltar</p>
             </Link>
