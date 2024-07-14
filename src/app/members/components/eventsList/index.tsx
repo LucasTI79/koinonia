@@ -41,9 +41,9 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
                     const startDateFormated = event?.start?.dateTime ? new Date(event.start.dateTime).toLocaleString() : `-`;
                     return (
                         <Card className="w-full" key={event.id}>
-                            <CardHeader>
+                            <CardHeader className="flex flex-col gap-4">
                                 <CardTitle>{event.summary}</CardTitle>
-                                <CardDescription>
+                                <CardDescription className="flex flex-col gap-2">
                                     <div className="flex items-center gap-2">
                                         <CalendarIcon className="w-4 h-4" />
                                         <span>{startDateFormated}</span>
