@@ -75,7 +75,7 @@ export function Event({ event }: TEventProps) {
                     </CardDescription>
                 </CardHeader>
                 <CardContent>
-                    <p>{event.description}</p>
+                    <p className="text-sm text-muted-foreground">{event.description}</p>
                 </CardContent>
             </Card>
         </motion.div>

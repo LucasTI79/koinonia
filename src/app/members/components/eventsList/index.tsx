@@ -8,7 +8,7 @@ type TCalendarListProps = {
     calendarId: string;
 }
 
-export const revalidate = Number(environments.revalidateTime ||  60 * 5) // 5 minutes
+export const revalidate = Number(environments.revalidateTime || 60 * 5) // 5 minutes
 
 export async function CalendarList({ calendarId }: TCalendarListProps) {
     const { data } = await listEvents(calendarId);
@@ -40,16 +40,18 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {data.items.map((event) => {
                     const startDateFormated = event?.start?.dateTime ? new Date(event.start.dateTime).toLocaleString() : `-`;
-                    return <Event 
-                            key={event.id} 
-                            event={{ 
-                                id: event?.id ?? '-', 
-                                summary: event?.summary ?? '-', 
-                                description: event?.description ?? '', 
-                                location: event?.location ?? '-', 
-                                startDate: startDateFormated 
-                            }} 
-                            />
+                    return (
+                        <Event
+                            key={event.id}
+                            event={{
+                                id: event?.id ?? '-',
+                                summary: event?.summary ?? '-',
+                                description: event?.description ?? '',
+                                location: event?.location ?? '-',
+                                startDate: startDateFormated
+                            }}
+                        />
+                    )
                 })}
             </div>
         </div>
