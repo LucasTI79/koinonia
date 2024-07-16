@@ -8,7 +8,7 @@ import { Cross } from "@/components/icons/Cross";
 import { Heart } from "@/components/icons/Heart";
 import { Arrow } from "@/components/icons/Arrow";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Mail, User } from "lucide-react";
+import { User } from "lucide-react";
 import { Header } from "@/components/header";
 import { Cursor } from "@/components/cursor";
 import { ClientOnly } from "@/components/clientOnly";
@@ -27,7 +27,7 @@ export default function Home() {
 
   return (
     <main className="w-full h-full mx-auto relative">
-      <Header links={headerLinks} />
+      <Header className="py-20" links={headerLinks} />
       <Link 
         href="/members" 
         className="bg-white dark:bg-black p-4 rounded-xl md:hidden fixed top-6 left-6 flex justify-center items-center gap-2">
@@ -35,7 +35,7 @@ export default function Home() {
         <p>Membros</p>
       </Link>
 
-      <section className="pt-40 flex flex-col gap-16 max-w-[1200px] justify-center items-center mx-auto p-4">
+      <section className="py-20 flex flex-col gap-16 max-w-[1200px] justify-center items-center mx-auto p-4">
         <div className="flex justify-center items-center">
           <Koinonia className="hidden md:block dark:fill-white fill-black" width={`6rem`} height={`6rem`} />
           <h1 className="text-6xl font-black">KOINONIA</h1>
@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="aboutus" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center lg:items-start mx-auto p-4">
+      <section id="aboutus" className="py-32 flex flex-col gap-8 max-w-[1200px] justify-center items-center lg:items-start mx-auto p-4">
         <h3 className="text-5xl font-black">Quem somos ?</h3>
         <article className="w-full max-w-[600px] flex flex-col justify-center items-center gap-4">
           <p className="text-pretty text-xl">Somos uma junção de pessoas de igrejas interministeriais, o foco não é seguir uma denominação e sim unir pessoas que queiram louvar a Jesus Cristo com excelência, com verdadeira adoração e que entendam o que é louvar o Senhor na sua essência.</p>
@@ -67,7 +67,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section id="purpose" className="pt-40 flex flex-col lg:flex-row gap-8 max-w-[1200px] justify-center lg:justify-between items-center lg:items-start mx-auto p-4">
+      <section id="purpose" className="py-32 flex flex-col lg:flex-row gap-8 max-w-[1200px] justify-center lg:justify-between items-center lg:items-start mx-auto p-4">
         <h3 className="text-5xl font-black">Nosso Propósito</h3>
         <article className="w-full max-w-[600px] flex flex-col gap-4 items-center justify-center">
           <p className="text-pretty text-xl">Pregar o amor de Cristo e ter um crescimento enraizado na palavra do Senhor, crescendo na graça e no conhecimento</p>
@@ -75,7 +75,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section id="faq" className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
+      <section id="faq" className="py-32 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
         <h3 className="text-5xl font-black">Sessão de dúvidas</h3>
         <Accordion type="single" collapsible className="w-full">
           <AccordionItem value="item-1">
@@ -99,7 +99,7 @@ export default function Home() {
         </Accordion>
       </section>
 
-      <section id='contact' className="pt-40 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
+      <section id='contact' className="py-32 flex flex-col gap-8 max-w-[1200px] justify-center items-center mx-auto p-4">
         <Smile width={76} height={76} />
         <div className="flex justify-center items-center gap-4">
           <h1 className="text-5xl font-black text-center">Entre nessa jornada</h1>

@@ -7,9 +7,10 @@ import { useRef, useState } from 'react';
 type TLink = { label: string; href: string; native?: boolean }
 type THeaderProps = {
     links: TLink[]
+    className?: string
 }
 
-export function Header({ links = [] }: THeaderProps) {
+export function Header({ links = [], className }: THeaderProps) {
     const [position, setPosition] = useState({
         left: 0,
         width: 0,
@@ -17,7 +18,7 @@ export function Header({ links = [] }: THeaderProps) {
     });
 
     return (
-        <header className="relative pt-20 justify-center items-center">
+        <header className={cn(`relative justify-center items-center`, className)}>
             <div className="hidden md:flex w-full max-w-[1200px] justify-center items-center mx-auto">
                 <nav className='relative space-y-2'>
                     <ul
@@ -38,7 +39,7 @@ export function Header({ links = [] }: THeaderProps) {
                                     {link.native ? (
                                         <a
                                             href={link.href}
-                                            className={cn("text-pretty relative inline-block")}
+                                            className={cn("text-pretty relative inline-block py-2 px-4")}
                                         >
                                             {link.label}
                                         </a>
