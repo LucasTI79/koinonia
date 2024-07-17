@@ -1,9 +1,9 @@
 "use client"
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { animate, useMotionValue, useTransform, motion, useSpring, useMotionTemplate } from "framer-motion";
+import { useMotionValue, motion, useSpring, useMotionTemplate } from "framer-motion";
 import { CalendarIcon, MapPinIcon } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 
 type TEventProps = {
     event: {
@@ -11,7 +11,7 @@ type TEventProps = {
         summary: string;
         description: string;
         location: string;
-        startDate: string
+        startDate?: string
     };
 }
 
@@ -52,6 +52,8 @@ export function Event({ event }: TEventProps) {
         y.set(0);
       };
 
+    const startDateFormated = event.startDate ? new Date(event.startDate).toLocaleString() : '-';
+
     return (
         <motion.div 
             ref={cardRef} 
@@ -66,7 +68,7 @@ export function Event({ event }: TEventProps) {
                     <CardDescription className="flex flex-col gap-2">
                         <div className="flex items-center gap-2">
                             <CalendarIcon className="w-4 h-4" />
-                            <span>{event.startDate}</span>
+                            <span suppressHydrationWarning>{startDateFormated}</span>
                         </div>
                         <div className="flex items-center gap-2">
                             <MapPinIcon className="w-4 h-4" />

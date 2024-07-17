@@ -1,7 +1,7 @@
 import { Card, CardDescription, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { environments } from "@/config/environments";
 import { listEvents } from "@/http/events";
-import { CalendarIcon, MapPinIcon } from "lucide-react";
+import { CalendarIcon } from "lucide-react";
 import { Event } from "./event";
 
 type TCalendarListProps = {
@@ -39,7 +39,6 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
             <h3 className="text-xl font-bold">{data.summary}</h3>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 {data.items.map((event) => {
-                    const startDateFormated = event?.start?.dateTime ? new Date(event.start.dateTime).toLocaleString() : `-`;
                     return (
                         <Event
                             key={event.id}
@@ -48,7 +47,7 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
                                 summary: event?.summary ?? '-',
                                 description: event?.description ?? '',
                                 location: event?.location ?? '-',
-                                startDate: startDateFormated
+                                startDate: event?.start?.dateTime ?? null
                             }}
                         />
                     )
