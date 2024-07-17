@@ -47,7 +47,7 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
                                 summary: event?.summary ?? '-',
                                 description: event?.description ?? '',
                                 location: event?.location ?? '-',
-                                startDate: event?.start?.dateTime ?? null
+                                startDate: event?.start?.dateTime ?? event?.start?.date ?? undefined
                             }}
                         />
                     )
