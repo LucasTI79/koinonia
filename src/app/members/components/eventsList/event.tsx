@@ -4,6 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { useMotionValue, motion, useSpring, useMotionTemplate } from "framer-motion";
 import { CalendarIcon, MapPinIcon } from "lucide-react";
 import { useRef } from "react";
+import { format } from 'date-fns'
 
 type TEventProps = {
     event: {
@@ -18,7 +19,7 @@ type TEventProps = {
 const ROTATION_RANGE = 16;
 const HALF_ROTATION_RANGE = 16 / 2;
 
-export function Event({ event }: TEventProps) {
+export function Event({ event }: Readonly<TEventProps>) {
     const cardRef = useRef<HTMLDivElement>(null);
 
     const x = useMotionValue(0);
@@ -52,7 +53,7 @@ export function Event({ event }: TEventProps) {
         y.set(0);
       };
 
-    const startDateFormated = event.startDate ? new Date(event.startDate).toLocaleString() : '-';
+    const startDateFormated = event.startDate ? format(new Date(event.startDate),'dd/MM/yyyy HH:mm') : '-';
 
     return (
         <motion.div 

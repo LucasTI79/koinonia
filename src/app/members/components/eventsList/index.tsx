@@ -10,7 +10,7 @@ type TCalendarListProps = {
 
 export const revalidate = Number(environments.revalidateTime || 60 * 5) // 5 minutes
 
-export async function CalendarList({ calendarId }: TCalendarListProps) {
+export async function CalendarList({ calendarId }: Readonly<TCalendarListProps>) {
     const { data } = await listEvents(calendarId);
 
     if (!data.items?.length) {
@@ -41,7 +41,11 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
         <div className="flex flex-col gap-4">
             <h3 className="text-xl font-bold">{data.summary}</h3>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                {data.items.map((event) => {
+                {data.items.sort((a,b) => {
+                    const aStart = a?.start?.dateTime ?? a?.start?.date ?? new Date().toISOString();
+                    const bStart = b?.start?.dateTime ?? b?.start?.date ?? new Date().toISOString();
+                    return new Date(aStart) > new Date(bStart) ? 1 : -1
+                }).map((event) => {
                     return (
                         <Event
                             key={event.id}
