@@ -15,21 +15,24 @@ export async function CalendarList({ calendarId }: TCalendarListProps) {
 
     if (!data.items?.length) {
         return (
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <Card className="w-full">
-                    <CardHeader>
-                        <CardTitle>Sem eventos futuros</CardTitle>
-                        <CardDescription>
-                            <div className="flex items-center gap-2">
-                                <CalendarIcon className="w-4 h-4" />
-                                <span>Sem eventos agendados</span>
-                            </div>
-                        </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <p>Fique atento(a) que logo teremos novidades 🙃 </p>
-                    </CardContent>
-                </Card>
+            <div className="flex flex-col gap-4">
+                <h3 className="text-xl font-bold">{data.summary}</h3>
+                <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                    <Card className="w-full">
+                        <CardHeader>
+                            <CardTitle>Sem eventos futuros</CardTitle>
+                            <CardDescription>
+                                <div className="flex items-center gap-2">
+                                    <CalendarIcon className="w-4 h-4" />
+                                    <span>Sem eventos agendados</span>
+                                </div>
+                            </CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            <p>Fique atento(a) que logo teremos novidades 🙃 </p>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
         )
     }
